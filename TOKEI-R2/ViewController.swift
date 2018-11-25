@@ -35,11 +35,13 @@ class ViewController: UIViewController {
             tmp2.fontColor = UIColor.black
             tmp2.fontSize = 20
             
-            let angle = CGFloat.pi * 2 / CGFloat(num) * CGFloat(i)
+//          let angle = CGFloat.pi * 2 / CGFloat(num) * CGFloat(i)
+            let angle = CGFloat.pi * 2 / CGFloat(num) * CGFloat(i) - CGFloat.pi / 2 //90度引く
             let x = sin(angle) * (radius - 20)
             let y = cos(angle) * (radius - 20)
             tmp2.position = CGPoint(x: x, y: y)
-            tmp2.zRotation = -angle
+//          tmp2.zRotation = -angle
+            tmp2.zRotation = -angle - CGFloat.pi / 2 //90度引く
 
             node.addChild(tmp2)
         }
@@ -93,19 +95,22 @@ class ViewController: UIViewController {
         let winH = SKShapeNode(circleOfRadius: 20)
         winH.strokeColor = UIColor.red
         winH.fillColor = UIColor.clear
-        winH.position = CGPoint(x: 160, y: 240 + 160 - 20)
+//      winH.position = CGPoint(x: 160, y: 240 + 160 - 20)
+        winH.position = CGPoint(x: 160 - 160 + 20, y: 240) //赤丸の位置修正
         scene.addChild(winH)
         
         let winM = SKShapeNode(circleOfRadius: 20)
         winM.strokeColor = UIColor.red
         winM.fillColor = UIColor.clear
-        winM.position = CGPoint(x: 160, y: 240 + 120 - 20)
+//      winM.position = CGPoint(x: 160, y: 240 + 120 - 20)
+        winM.position = CGPoint(x: 160 - 120 + 20, y: 240) //赤丸の位置修正
         scene.addChild(winM)
 
         let winS = SKShapeNode(circleOfRadius: 20)
         winS.strokeColor = UIColor.red
         winS.fillColor = UIColor.clear
-        winS.position = CGPoint(x: 160, y: 240 + 80 - 20)
+//      winS.position = CGPoint(x: 160, y: 240 + 80 - 20)
+        winS.position = CGPoint(x: 160 - 80 + 20, y: 240) //赤丸の位置修正
         scene.addChild(winS)
 
         nodeH.run(SKAction.repeatForever(SKAction.rotate(
